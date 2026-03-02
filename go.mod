@@ -1,3 +1,3 @@
-module example.com/hello
+module example.com/learn-go-with-tests
 
 go 1.24.10
