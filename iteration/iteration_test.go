@@ -5,10 +5,8 @@ import (
 	"testing"
 )
 
-const repeatCount = 5
-
 func TestRepeat(t *testing.T) {
-	repeated := Repeat("a")
+	repeated := Repeat("a", 5)
 	expected := "aaaaa"
 
 	if repeated != expected {
@@ -16,7 +14,7 @@ func TestRepeat(t *testing.T) {
 	}
 }
 
-func Repeat(character string) string {
+func Repeat(character string, repeatCount int) string {
 	var repeated strings.Builder
 	// alternative for range repeatCount
 	for i := 0; i < repeatCount; i++ {
@@ -27,6 +25,6 @@ func Repeat(character string) string {
 
 func BenchmarkRepeat(b *testing.B) {
 	for b.Loop() {
-		Repeat("a")
+		Repeat("a", 5)
 	}
 }
