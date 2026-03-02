@@ -23,3 +23,9 @@ func Repeat(character string) string {
 	}
 	return repeated
 }
+
+func BenchmarkRepeat(b *testing.B) {
+	for b.Loop() {
+		Repeat("a")
+	}
+}
