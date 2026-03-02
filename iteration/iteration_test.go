@@ -1,6 +1,7 @@
 package iteration
 
 import (
+	"fmt"
 	"strings"
 	"testing"
 )
@@ -21,6 +22,12 @@ func Repeat(character string, repeatCount int) string {
 		repeated.WriteString(character)
 	}
 	return repeated.String()
+}
+
+func ExampleRepeat() {
+	characterRepeat := Repeat("a", 5)
+	fmt.Println(characterRepeat)
+	// Output: aaaaa
 }
 
 func BenchmarkRepeat(b *testing.B) {
