@@ -1,6 +1,7 @@
 package iteration
 
 import (
+	"strings"
 	"testing"
 )
 
@@ -16,12 +17,12 @@ func TestRepeat(t *testing.T) {
 }
 
 func Repeat(character string) string {
-	var repeated string
+	var repeated strings.Builder
 	// alternative for range repeatCount
 	for i := 0; i < repeatCount; i++ {
-		repeated += character
+		repeated.WriteString(character)
 	}
-	return repeated
+	return repeated.String()
 }
 
 func BenchmarkRepeat(b *testing.B) {
